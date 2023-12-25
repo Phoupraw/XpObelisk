@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "xps:xp_rod_smithing"
+    ]
+  },
+  "criteria": {
+    "has_xp_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "xps:xp_dust"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "xps:xp_rod_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_xp_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

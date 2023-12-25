@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "IxI",
+        "xBx",
+        "bXb"
+    ],
+    "key": {
+        "x": {
+            "tag": "xps:xp_obelisk_alt"
+        },
+        "I": {
+            "item": "xps:soul_copper_ingot"
+        },
+        "B": {
+            "item": "minecraft:enchanted_book"
+        },
+        "X": {
+            "item": "xps:xp_remover"
+        },
+        "b": {
+            "item": "xps:block_soul_copper"
+        }
+    },
+    "result": {
+        "item": "xps:block_xp_obelisk",
+        "count": 1
+    }
+}

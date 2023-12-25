@@ -1,0 +1,18 @@
+{
+  "name": "item.xps.xp_rod",
+  "icon": "xps:xp_rod",
+  "category": "xps:item_category",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "xps:xp_rod",
+      "link_recipe": true,
+      "text": "page.text.crafting_material"
+    },
+    {
+      "type": "crafting",
+      "recipe": "xps:xp_rod"
+    }
+  ]
+}

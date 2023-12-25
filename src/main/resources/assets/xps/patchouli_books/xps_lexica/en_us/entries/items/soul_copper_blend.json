@@ -1,0 +1,19 @@
+{
+  "name": "item.xps.soul_copper_blend",
+  "icon": "xps:soul_copper_blend",
+  "category": "xps:item_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "xps:soul_copper_blend",
+      "link_recipe": true,
+      "text": "page.text.crafting_material"
+    },
+    {
+      "type": "crafting",
+      "recipe": "xps:soul_copper_blend"
+    }
+
+  ]
+}

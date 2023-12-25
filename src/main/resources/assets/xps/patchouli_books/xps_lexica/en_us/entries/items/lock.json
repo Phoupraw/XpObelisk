@@ -1,0 +1,18 @@
+{
+  "name": "item.xps.lock",
+  "icon": "xps:lock",
+  "category": "xps:item_category",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "xps:lock",
+      "link_recipe": true,
+      "text": "page.text.lock"
+    },
+    {
+      "type": "crafting",
+      "recipe": "xps:lock"
+    }
+  ]
+}

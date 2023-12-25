@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " n ",
+        "nGn",
+        "/n "
+    ],
+    "key": {
+        "n": {
+            "item": "xps:soul_copper_nugget"
+        },
+        "G": {
+            "tag": "minecraft:glass_panes"
+        },
+        "/": {
+            "item": "xps:xp_rod"
+        }
+    },
+    "result": {
+        "item": "xps:inspector",
+        "count": 1
+    }
+}

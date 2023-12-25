@@ -1,0 +1,14 @@
+<root>
+    <item name='net.minecraft.registry.Registry T register(net.minecraft.registry.Registry&lt;V&gt;, net.minecraft.registry.RegistryKey&lt;V&gt;, T)'>
+        <annotation name='org.jetbrains.annotations.Contract'>
+            <val name="value" val="&quot;_,_,_-&gt;param3&quot;"/>
+            <val name="mutates" val="&quot;param1&quot;"/>
+        </annotation>
+    </item>
+    <item name='net.minecraft.registry.Registry T register(net.minecraft.registry.Registry&lt;V&gt;, net.minecraft.util.Identifier, T)'>
+        <annotation name='org.jetbrains.annotations.Contract'>
+            <val name="value" val="&quot;_,_,_-&gt;param3&quot;"/>
+            <val name="mutates" val="&quot;param1&quot;"/>
+        </annotation>
+    </item>
+</root>

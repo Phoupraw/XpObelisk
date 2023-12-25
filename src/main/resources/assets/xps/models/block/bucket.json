@@ -1,0 +1,94 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "block/cauldron_bottom",
+		"1": "block/cauldron_inner",
+		"2": "trifle_industry:block/bucket_side",
+		"3": "trifle_industry:block/bucket_top",
+		"particle": "trifle_industry:block/bucket_side"
+	},
+	"elements": [
+		{
+			"name": "外壳",
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#3", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"name": "脚内",
+			"from": [13, 2, 13],
+			"to": [3, 0, 3],
+			"faces": {
+				"north": {"uv": [3, 14, 13, 16], "texture": "#2"},
+				"east": {"uv": [3, 14, 13, 16], "texture": "#2"},
+				"south": {"uv": [3, 14, 13, 16], "texture": "#2"},
+				"west": {"uv": [3, 14, 13, 16], "texture": "#2"},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#1"}
+			}
+		},
+		{
+			"name": "内壳",
+			"from": [14, 16, 14],
+			"to": [2, 4, 2],
+			"faces": {
+				"north": {"uv": [2, 12, 14, 0], "texture": "#2"},
+				"east": {"uv": [2, 12, 14, 0], "texture": "#2"},
+				"south": {"uv": [2, 12, 14, 0], "texture": "#2"},
+				"west": {"uv": [2, 12, 14, 0], "texture": "#2"},
+				"up": {"uv": [2, 2, 14, 14], "texture": "#1"}
+			}
+		},
+		{
+			"name": "脚边",
+			"from": [11, 2, 3],
+			"to": [5, 0, 0],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [3, 0, 5, 3], "texture": "#0"},
+				"west": {"uv": [11, 0, 13, 3], "texture": "#0"},
+				"down": {"uv": [5, 0, 11, 3], "texture": "#1"}
+			}
+		},
+		{
+			"name": "脚边",
+			"from": [3, 2, 11],
+			"to": [0, 0, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [3, 0, 5, 3], "texture": "#0"},
+				"south": {"uv": [11, 0, 13, 3], "texture": "#0"},
+				"down": {"uv": [5, 0, 11, 3], "rotation": 90, "texture": "#1"}
+			}
+		},
+		{
+			"name": "脚边",
+			"from": [11, 2, 16],
+			"to": [5, 0, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [11, 0, 13, 3], "texture": "#0"},
+				"west": {"uv": [3, 0, 5, 3], "texture": "#0"},
+				"down": {"uv": [5, 0, 11, 3], "rotation": 180, "texture": "#1"}
+			}
+		},
+		{
+			"name": "脚边",
+			"from": [16, 2, 11],
+			"to": [13, 0, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [11, 0, 13, 3], "texture": "#0"},
+				"south": {"uv": [3, 0, 5, 3], "texture": "#0"},
+				"down": {"uv": [5, 0, 11, 3], "rotation": 270, "texture": "#1"}
+			}
+		}
+	]
+}

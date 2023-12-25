@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  /",
+        "I/I",
+        "II "
+    ],
+    "key": {
+        "/": {
+            "item": "xps:xp_rod"
+        },
+        "I": {
+            "item": "xps:soul_copper_ingot"
+        }
+    },
+    "result": {
+        "item": "xps:key",
+        "count": 1
+    }
+}

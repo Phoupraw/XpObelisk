@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "xps:xp_obelisk"
+    ]
+  },
+  "criteria": {
+    "has_xp_remover": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "xps:xp_remover"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "xps:xp_obelisk"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_xp_remover",
+      "has_the_recipe"
+    ]
+  ]
+}

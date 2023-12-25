@@ -1,0 +1,22 @@
+{
+  "name": "item.minecraft.experience_bottle",
+  "icon": "minecraft:experience_bottle",
+  "category": "xps:item_category",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "minecraft:experience_bottle",
+      "link_recipe": true,
+      "text": "page.text.bottle_o_enchant"
+    },
+    {
+      "type": "xps:xp_template",
+      "heading": "minecraft:experience_bottle",
+      "switch": true,
+      "input": "minecraft:glass_bottle",
+      "output": "minecraft:experience_bottle",
+      "text": "page.text.bottle.detail"
+    }
+  ]
+}

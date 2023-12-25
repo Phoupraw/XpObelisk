@@ -1,0 +1,22 @@
+{
+  "name": "item.xps.soul_copper_ingot",
+  "icon": "xps:soul_copper_ingot",
+  "category": "xps:item_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "xps:soul_copper_ingot",
+      "link_recipe": true,
+      "text": "page.text.crafting_material"
+    },
+    {
+      "type": "xps:ingot_crafting_template",
+      "heading": "xps:block_soul_copper",
+      "input1": "xps:block_soul_copper",
+      "input2": "xps:soul_copper_blend",
+      "output": "xps:soul_copper_ingot#9",
+      "output2": "xps:soul_copper_ingot"
+    }
+  ]
+}

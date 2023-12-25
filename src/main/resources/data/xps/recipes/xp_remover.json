@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "InI",
+        "nBn",
+        "InI"
+    ],
+    "key": {
+        "B": {
+            "item": "xps:xp_dust"
+        },
+        "I": {
+            "item": "xps:soul_copper_ingot"
+        },
+        "n": {
+            "item": "xps:soul_copper_nugget"
+        }
+    },
+    "result": {
+        "item": "xps:xp_remover",
+        "count": 1
+    }
+}

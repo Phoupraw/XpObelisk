@@ -264,7 +264,10 @@ public class XOUtils {
         return new ResourceAmount<>(variant, amount);
     }
     @Contract("_, _, _ -> param1")
-    public @NotNull NbtCompound put(NbtCompound self, String key, @Nullable NbtElement value) {
+    public @NotNull NbtCompound put(@Nullable NbtCompound self, String key, @Nullable NbtElement value) {
+        if (self == null) {
+            self = new NbtCompound();
+        }
         if (value == null) {
             self.remove(key);
         } else {
@@ -289,16 +292,23 @@ public class XOUtils {
     public @NotNull NbtCompound put(NbtCompound self, String key, boolean value) {
         return put(self, key, value ? NbtByte.of(true) : null);
     }
+    public @Nullable NbtElement clearDefault(@Nullable NbtElement element) {
+        if (element==null) return null;
+        if (element instanceof NbtCompound compound) {
+            return clearDefault(compound);
+        }
+        if (element instanceof NbtList list) {
+            return clearDefault(list);
+        }
+        if (element instanceof AbstractNbtNumber nbtNumber) {
+            return clearDefault(nbtNumber);
+        }
+        throw new UnsupportedOperationException(Objects.toString(element));
+    }
     public @Nullable NbtCompound clearDefault(NbtCompound self) {
         for (Iterator<String> iterator = self.getKeys().iterator(); iterator.hasNext(); ) {
             String key = iterator.next();
-            NbtElement element = self.get(key);
-            if (element instanceof NbtCompound compound) {
-                element = clearDefault(compound);
-            } else if (element instanceof NbtList list) {
-                element = clearDefault(list);
-            }
-            if (element == null) {
+            if (clearDefault(self.get(key)) == null) {
                 iterator.remove();
             }
         }
@@ -306,17 +316,14 @@ public class XOUtils {
     }
     public @Nullable NbtList clearDefault(NbtList self) {
         for (Iterator<NbtElement> iterator = self.iterator(); iterator.hasNext(); ) {
-            NbtElement element = iterator.next();
-            if (element instanceof NbtCompound compound) {
-                element = clearDefault(compound);
-            } else if (element instanceof NbtList list) {
-                element = clearDefault(list);
-            }
-            if (element == null) {
+            if (clearDefault(iterator.next()) == null) {
                 iterator.remove();
             }
         }
         return self.isEmpty() ? null : self;
+    }
+    public @Nullable <T extends AbstractNbtNumber> T clearDefault(T self) {
+        return self.longValue() == 0 && self.doubleValue() == 0 ? null : self;
     }
     @SuppressWarnings("deprecation")
     public boolean isIn(Item self, TagKey<Item> tagKey) {
@@ -418,7 +425,7 @@ public class XOUtils {
         return (double) getAmount(self) / getCapacity(self);
     }
     public double getOccupancy(SingleSlotStorage<?> self) {
-        return getOccupancy((StorageView<?>)self);
+        return getOccupancy((StorageView<?>) self);
     }
     public long getLong(NbtCompound self, String key, long defaultValue) {
         return self.contains(key, NbtElement.NUMBER_TYPE) ? self.getLong(key) : defaultValue;

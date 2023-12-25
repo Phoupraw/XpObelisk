@@ -13,6 +13,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import phoupraw.mcmod.xp_obelisk.misc.XOUtils;
 
 import java.util.List;
 import java.util.Objects;
@@ -33,44 +34,47 @@ public class XpRemoverItem extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = (user.getMainHandStack().getItem() instanceof XpRemoverItem) ? user.getMainHandStack() : user.getOffHandStack();
 
-        NbtCompound nbt = getNbtCompound(stack);
+        //NbtCompound nbt = getNbtCompound(stack);
 
         // Play sound when switching
         if (user.isSneaking()) {
             if (world.isClient) {
                 user.playSound(SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
             }
-            nbt.putBoolean(MODE, !nbt.getBoolean(MODE));
+
+            NbtCompound root = stack.getOrCreateNbt();
+            stack.setNbt(XOUtils.clearDefault(XOUtils.put(root, MODE, !root.getBoolean(MODE))));
+            //nbt.putBoolean(MODE, !nbt.getBoolean(MODE));
         }
 
-        if (nbt.getBoolean(MODE)) {
-            stack.setNbt(nbt);
-        } else {
-            stack.removeSubNbt(MODE);
-        }
+        //if (nbt.getBoolean(MODE)) {
+        //    stack.setNbt(nbt);
+        //} else {
+        //    stack.removeSubNbt(MODE);
+        //}
 
-        return new TypedActionResult<>(ActionResult.SUCCESS, user.getStackInHand(hand));
+        return new TypedActionResult<>(ActionResult.SUCCESS, stack);
     }
-    private NbtCompound getNbtCompound(ItemStack stack) {
-        NbtCompound nbt;
-        if (stack.hasNbt()) {
-            nbt = stack.getNbt();
-        } else {
-            nbt = new NbtCompound();
-        }
-
-        if (nbt != null && !nbt.contains(MODE)) {
-            nbt.putBoolean(MODE, false);
-        }
-
-        return nbt;
-    }
+    //private NbtCompound getNbtCompound(ItemStack stack) {
+    //    NbtCompound nbt;
+    //    if (stack.hasNbt()) {
+    //        nbt = stack.getNbt();
+    //    } else {
+    //        nbt = new NbtCompound();
+    //    }
+    //
+    //    if (nbt != null && !nbt.contains(MODE)) {
+    //        nbt.putBoolean(MODE, false);
+    //    }
+    //
+    //    return nbt;
+    //}
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         super.appendTooltip(stack, world, tooltip, tooltipContext);
         if (Screen.hasShiftDown()) {
             tooltip.add(Text.translatable("item.tooltip.xp_remover_sneak").formatted(Formatting.RED));
-            NbtCompound nbt = getNbtCompound(stack);
+            NbtCompound nbt = Objects.requireNonNullElse(stack.getNbt(),new NbtCompound());
             if (nbt.getBoolean(MODE)) {
                 tooltip.add(Text.translatable("item.tooltip.xp_rod").formatted(Formatting.AQUA));
             } else {
